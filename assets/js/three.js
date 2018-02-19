@@ -28,17 +28,32 @@ var geometry = new THREE.BoxGeometry( 10, 10, 10 );
 // cube face texture (image)
 var cubeMaterial = new THREE.MeshBasicMaterial({ map: cubeTexture });
 var cube = new THREE.Mesh(geometry, cubeMaterial);
-red = new THREE.Color(1, 0, 0);
-green = new THREE.Color(0, 1, 0);
-blue = new THREE.Color(0, 0, 1);
-var colors = [red, green, blue];
+//add multipl color to cube
+// red = new THREE.Color(1, 0, 0);
+// green = new THREE.Color(0, 1, 0);
+// blue = new THREE.Color(0, 0, 1);
+// var colors = [red, green, blue];
 
-for (var i = 0; i < 3; i++) {
-    geometry.faces[4 * i].color = colors[i];
-    geometry.faces[4 * i + 1].color = colors[i];
-    geometry.faces[4 * i + 2].color = colors[i];
-    geometry.faces[4 * i + 3].color = colors[i];
-}
+// for (var i = 0; i < 3; i++) {
+//     geometry.faces[4 * i].color = colors[i];
+//     geometry.faces[4 * i + 1].color = colors[i];
+//     geometry.faces[4 * i + 2].color = colors[i];
+//     geometry.faces[4 * i + 3].color = colors[i];
+// }
+//add shadow
+var ambientLight = new THREE.AmbientLight(0x090909);
+scene.add(ambientLight);
+
+// Spotlight for specific illumination
+var light = new THREE.SpotLight(0xAAAAAA);
+renderer.shadowMapEnabled = true;
+light.castShadow = true;
+light.shadowDarkness = 0.5;
+light.shadowCameraVisible = true;
+light.shadowCameraRight     =  5;
+light.shadowCameraLeft     = -5;
+light.shadowCameraTop      =  5;
+light.shadowCameraBottom   = -5;
 //add scene
 scene.add(cube);
 //  position
