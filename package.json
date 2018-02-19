@@ -1,0 +1,26 @@
+{
+  "name": "cube",
+  "version": "1.0.0",
+  "description": "making cube by threejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayaalbakri/3DCube.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayaalbakri/3DCube/issues"
+  },
+  "homepage": "https://github.com/ayaalbakri/3DCube#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.15.0"
+  }
+}
